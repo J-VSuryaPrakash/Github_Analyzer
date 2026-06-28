@@ -35,7 +35,7 @@ function languageStatsHelper(languagesData) {
 		.sort((first, second) => second.count - first.count)
 		.slice(0, 5);
 
-	console.log(topLanguages);
+	return topLanguages;
 }
 
 export default languageStatsHelper;

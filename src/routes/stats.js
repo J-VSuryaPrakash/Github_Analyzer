@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { allProfileList, getProfileByUsername } from '../controllers/storedStats.controller.js';
+import { allProfileList, getProfileByUsername } from '../controllers/stats.controller.js';
 
 const router = Router();
 
