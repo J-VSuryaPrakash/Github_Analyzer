@@ -1,13 +1,23 @@
+import "dotenv/config";
 import app from "./app.js";
 import { dbConnect, db } from "./config/db/index.js";
+import profileModel  from '../src/models/profile.model.js';
+import profileStatsModel  from '../src/models/profilestats.model.js';
+import languageStatsModel from '../src/models/languagestats.model.js';
 
-dbConnect().then(() => {
-  db.sync({ alter: true }).then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+const startServer = async () => {
+  try {
+    await dbConnect();
+    await db.sync({ alter: true }).then(() => {
+      app.listen(process.env.PORT || 8000, () => {
         console.log("Tables created/updated");
         console.log(`Server is running on port ${process.env.PORT}`);
+      });
     });
-  });
-}).catch((err) => {
-    console.log("Database connection error.")
-})
+  } catch (error) {
+    console.error("Failed to start server.", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
