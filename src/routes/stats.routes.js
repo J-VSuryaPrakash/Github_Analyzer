@@ -3,6 +3,6 @@ import { getProfileStats } from "../controllers/stats.controller.js";
 
 const router = Router();
 
-router.route("/stats").get(getProfileStats);
+router.route("/").get(getProfileStats);
 
 export default router;

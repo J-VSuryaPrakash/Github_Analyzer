@@ -2,7 +2,7 @@ import "dotenv/config";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
 import languageStatsHelper from "../utils/languageStats.helper.js";
-import profileStatsModel from "../models/profilestats.model.js";
+import profileStatsModel from "../models/profileStats.model.js";
 
 const getProfileStats = async (req, res, next) => {
   try {

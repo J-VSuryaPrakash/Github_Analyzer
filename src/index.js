@@ -2,8 +2,7 @@ import "dotenv/config";
 import app from "./app.js";
 import { dbConnect, db } from "./config/db/index.js";
 import profileModel  from '../src/models/profile.model.js';
-import profileStatsModel  from '../src/models/profilestats.model.js';
-import languageStatsModel from '../src/models/languagestats.model.js';
+import profileStatsModel  from './models/profileStats.model.js';
 
 const startServer = async () => {
   try {

@@ -1,9 +1,10 @@
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
+import profileStatsModel from "../models/profileStats.model.js";
 
 const allProfileList = async (req, res, next) => {
   try {
-    const profileStats = await profileStatsModel.find({});
+    const profileStats = await profileStatsModel.findAll();
 
     if (!profileStats || profileStats.length === 0) {
       return res.status(404).json(new ApiError(404, "No profile stats found"));
@@ -21,7 +22,7 @@ const allProfileList = async (req, res, next) => {
 const getProfileByUsername = async (req, res, next) => {
   try {
     const { username } = req.body;
-    const existingProfile = await profileModel.findOne({
+    const existingProfile = await profileStatsModel.findOne({
       where: { username: profile.username },
     });
 
@@ -47,7 +48,7 @@ const getProfileByUsername = async (req, res, next) => {
         following: data.following,
       };
 
-      const createdProfile = await profileModel.create(profile);
+      const createdProfile = await profileStatsModel.create(profile);
       return res
         .status(201)
         .json(
