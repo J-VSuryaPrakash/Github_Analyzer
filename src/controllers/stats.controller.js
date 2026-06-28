@@ -1,7 +1,7 @@
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
-import profileStatsModel from "../models/profileStats.model.js";
 import profileModel from "../models/profile.model.js";
+import profileStatsModel from "../models/profileStats.model.js";
 import { db } from "../config/db/index.js";
 import languageStatsHelper from "../utils/languageStats.helper.js";
 
