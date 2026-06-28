@@ -20,6 +20,14 @@ const profileStatsModel = db.define("ProfileStats", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  topLanguages: {
+    type: DataTypes.JSON,
+    allowNull: true,
+  },
+  topRepos: {
+    type: DataTypes.JSON,
+    allowNull: true,
+  },
 });
 
 export default profileStatsModel;
